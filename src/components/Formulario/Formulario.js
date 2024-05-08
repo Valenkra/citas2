@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Boton from '../Boton/Boton';
 import './Formulario.css';
 
@@ -37,7 +37,7 @@ function Formulario({ citas, setCita}) {
                     <label>Sintomas</label>
                     <textarea name="sintomas"></textarea>
                 </div>
-                <Boton sendText={"Agregar Cita"}></Boton>
+                <Boton sendText={"Agregar Cita"} type="submit" evento=""></Boton>
             </form>
         );
 }

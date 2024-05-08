@@ -5,7 +5,7 @@ import './AdministradorDeCitas.css';
 function AdministradorDeCitas({ citas, setCitas }) {
     let i = -1
     return (
-            <div>
+            <div className="administradorDeCitas">
                 <Subtitulo subtitulo={"Administra tus citas"}></Subtitulo>
                 <div class="cards">
                     {   

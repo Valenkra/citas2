@@ -1,10 +1,11 @@
-import Boton from '../Boton/Boton';
+import '../Boton/Boton.css';
 import './Card.css';
 
 function Card({mascota , duenio, fecha, hora, sintomas, id, setCitas, citas}) {
     
   const eliminar = (e) => {
-    setCitas(...citas.splice(e.target.index.value),1)
+    citas.splice(id,1)
+    setCitas(...citas)
     }
 
     return (
@@ -17,7 +18,7 @@ function Card({mascota , duenio, fecha, hora, sintomas, id, setCitas, citas}) {
                 <li><b>Sintomas:</b> {sintomas}</li>
                 <input type="hidden" value={id} name="index" />
               </ul>
-              <Boton sendText="Eliminar X" onClick={eliminar}></Boton>
+              <button onClick={eliminar} class="allMayus myBtn">Eliminar X</button>;
           </div>
       );
 }
