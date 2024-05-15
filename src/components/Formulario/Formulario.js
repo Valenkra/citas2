@@ -8,7 +8,7 @@ function Formulario({ citas, setCita}) {
         let pre = e.target;
         if ((pre.nMascota.value === null || pre.nMascota.value === "") && (pre.nDuenio.value === null || pre.nDuenio.value === "") && 
         (pre.fecha.value === null || pre.fecha.value === "") && (pre.hora.value === null || pre.hora.value === "")) {
-            alert("Please Fill In All Required Fields");
+            alert("Carga todos los campos necesarios");
             return false;
           }
           else{
