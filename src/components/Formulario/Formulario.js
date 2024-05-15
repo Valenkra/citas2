@@ -3,8 +3,9 @@ import Boton from '../Boton/Boton';
 import './Formulario.css';
 
 function Formulario({ citas, setCita}) {
-
+    
     const crearCita = (e) => {
+        if (window.confirm("Confirmas que queres agregar esta cita?")) {
         e.preventDefault();
         setCita([...citas, {
             nMascota: e.target.nMascota.value,
@@ -13,7 +14,8 @@ function Formulario({ citas, setCita}) {
             hora: e.target.hora.value,
             sintomas: e.target.sintomas.value
         }]);
-    }
+        }else alert("La cita no ha sido creada");
+}
 
     return (
             <form onSubmit={crearCita}>
@@ -37,7 +39,7 @@ function Formulario({ citas, setCita}) {
                     <label>Sintomas</label>
                     <textarea name="sintomas"></textarea>
                 </div>
-                <Boton sendText={"Agregar Cita"} type="submit" evento=""></Boton>
+                <Boton sendText={"Agregar Cita"}></Boton>
             </form>
         );
 }
