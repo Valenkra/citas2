@@ -6,13 +6,14 @@ function Formulario({ citas, setCita}) {
     
     const crearCita = (e) => {
         let pre = e.target;
-        if ((pre.nMascota.value === null || pre.nMascota.value.replace(" ", "").length <= 0) && (pre.nDuenio.value === null || pre.nDuenio.value.replace(" ", "").length <= 0) && 
-        (pre.fecha.value === null || pre.fecha.value.replace(" ", "").length <= 0) && (pre.hora.value === null || pre.hora.value.replace(" ", "").length <= 0)) {
+        if ((pre.nMascota.value === null || pre.nMascota.value.trim() === "" || (pre.nMascota.value.trim()).length === 0) && 
+        (pre.nDuenio.value === null || pre.nDuenio.value.trim() === "" || (pre.nDuenio.value.trim()).length === 0) && 
+        (pre.fecha.value === null || pre.fecha.value.trim() === "" || (pre.fecha.value.trim()).length === 0) && 
+        (pre.hora.value === null || pre.hora.value.trim() === "" || (pre.hora.value.trim()).length === 0)) {
             alert("Carga todos los campos necesarios");
             return false;
           }
           else{
-            console.log(pre.nDuenio.value === "");
             if (window.confirm("Confirmas que queres agregar esta cita?")) {
                 e.preventDefault();
                 setCita([...citas, {
